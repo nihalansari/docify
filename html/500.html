@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="no-outlines">
+<head>
+   
+</head>
+
+<body>   
+<link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+        <link rel="stylesheet" href="css/jquery.simplefilebrowser.css">
+
+        <script src="js/jquery.simplefilebrowser.js"><script>
+
+        <div id="files"></div>
+
+        <script>
+
+            $().ready(function(){
+
+                $("#files").simpleFileBrowser({
+                    url: music.php,
+                    path: '/',
+                    view: 'icon',
+                    select: false,
+                    breadcrumbs: true,
+                    onSelect: function (obj, file, folder, type) {
+                        $("#select").html("You select a "+type+" "+folder+'/'+file);
+                    },
+                    onOpen: function (obj,file, folder, type) {
+                        if (type=='file') {
+                            alert("Open file: "+folder+'/'+file);
+                        }
+                    }
+                });
+              $(".data").simpleDatePicker({
+                    date.selected:'today'
+              });
+
+            });
+
+        </script>
+    	
+	
+</body>
+</html>
